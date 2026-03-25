@@ -2,11 +2,13 @@ databases:
   - name: studybud-db
     databaseName: studybud
     user: studybud
+    plan: free
 
 services:
   - type: web
     name: studybud
     env: python
+    plan: free
     buildCommand: "./build.sh"
     startCommand: "gunicorn studybud.wsgi:application"
     envVars:
